@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 12:42:20 by npineau           #+#    #+#             */
-/*   Updated: 2014/03/25 15:15:19 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/06 13:06:27 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *src)
 
 	length = ft_strlen(src);
 	index = 0;
-	copy = (char *) malloc((1 + length) * sizeof(char));
+	copy = (char *)malloc((1 + length) * sizeof(char));
 	if (copy == NULL)
 		return (NULL);
 	while (index < length)

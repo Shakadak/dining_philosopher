@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 12:26:00 by npineau           #+#    #+#             */
-/*   Updated: 2014/02/05 12:08:00 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/06 13:07:53 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *src, int c)
 	while (l >= 0)
 	{
 		if (src[l] == c)
-			return ((char *) &src[l]);
+			return ((char *)&src[l]);
 		l--;
 	}
 	return (NULL);

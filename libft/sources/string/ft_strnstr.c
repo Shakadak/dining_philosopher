@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 14:54:34 by npineau           #+#    #+#             */
-/*   Updated: 2014/02/05 12:07:54 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/06 13:07:36 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *dest, const char *mod, size_t n)
 				if (dest[i] == mod[0] && i + length <= n)
 				{
 					if (!ft_strncmp(&dest[i], mod, length))
-						return ((char *) &dest[i]);
+						return ((char *)&dest[i]);
 				}
 				i++;
 			}
@@ -36,5 +36,5 @@ char	*ft_strnstr(const char *dest, const char *mod, size_t n)
 		return (NULL);
 	}
 	else
-		return ((char *) dest);
+		return ((char *)dest);
 }

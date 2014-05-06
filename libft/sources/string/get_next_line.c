@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/06 16:16:06 by npineau           #+#    #+#             */
-/*   Updated: 2014/02/17 16:06:07 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/06 13:14:53 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,37 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-static int	ft_cp_buff(char **line, char *buff);
-static int	ft_init_line(char **line);
-static int	ft_check_line(char *buff);
-static int	ft_read_txt(int fd, char **line, char *buff);
-
 /*
 ** Each and every function in this file return an integer, in order to exit.
 ** Whether to return an error or that the line is completed.
 */
 
-int			get_next_line(int const fd, char **line)
-{
-	int			ret;
-	static char	buff[BUFF_SIZE + 1];
-
-	ret = ft_init_line(line);
-	if (ret == -1)
-		return (-1);
-	if (ft_strlen(buff))
-	{
-		ret = ft_cp_buff(line, buff);
-		if (ret == -1)
-			return (-1);
-		if (ft_check_line(buff))
-			return (1);
-	}
-	ret = ft_read_txt(fd, line, buff);
-	if (ret == -1)
-		return (-1);
-	else if (ret == 0)
-		return (0);
-	else
-		return (1);
-}
-
 /*
 ** ft_read_txt use read in a loop and copy what's in the buffer to *line,
 ** using ft_cp_buff. Whenever ft_check_line return 1 or -1, it exit the loop.
+*/
+
+/*
+** ft_cp_buff copy what's in the buffer to a temporary string, stopping when
+** encountering a \n or when reaching the end of the buffer.
+** It then join the current line with the temporary string.
+** Because of the behavior of ft_strjoin, the address of *line must be stored
+** premptively to be able to free after, as it return a new string.
+** The temporary string is freed as well.
+*/
+
+/*
+** ft_init_line check if *line does exist. If that's the case, it clear it,
+** otherwise it create a new one of size 0 (Actually of size 1 to place a \0).
+** Note that it's the responsibility of the user to give an allocated pointer
+** if *line isn't NULL, as there is no way to check if the adress point to
+** allocated memory.
+*/
+
+/*
+** ft_check_line verify if a \n is present in the buffer. If that's the case,
+** it "move" the start of the buffer after the \n, otherwise, it clear
+** enirely the buffer.
 */
 
 static int	ft_read_txt(int fd, char **line, char *buff)
@@ -77,15 +70,6 @@ static int	ft_read_txt(int fd, char **line, char *buff)
 	return (-1);
 }
 
-/*
-** ft_cp_buff copy what's in the buffer to a temporary string, stopping when
-** encountering a \n or when reaching the end of the buffer.
-** It then join the current line with the temporary string.
-** Because of the behavior of ft_strjoin, the address of *line must be stored
-** premptively to be able to free after, as it return a new string.
-** The temporary string is freed as well.
-*/
-
 static int	ft_cp_buff(char **line, char *buff)
 {
 	char	*c;
@@ -109,14 +93,6 @@ static int	ft_cp_buff(char **line, char *buff)
 	return (1);
 }
 
-/*
-** ft_init_line check if *line does exist. If that's the case, it clear it,
-** otherwise it create a new one of size 0 (Actually of size 1 to place a \0).
-** Note that it's the responsibility of the user to give an allocated pointer
-** if *line isn't NULL, as there is no way to check if the adress point to
-** allocated memory.
-*/
-
 static int	ft_init_line(char **line)
 {
 	*line = ft_strnew(0);
@@ -124,12 +100,6 @@ static int	ft_init_line(char **line)
 		return (-1);
 	return (0);
 }
-
-/*
-** ft_check_line verify if a \n is present in the buffer. If that's the case,
-** it "move" the start of the buffer after the \n, otherwise, it clear
-** enirely the buffer.
-*/
 
 static int	ft_check_line(char *buff)
 {
@@ -142,4 +112,29 @@ static int	ft_check_line(char *buff)
 	}
 	ft_strclr(buff);
 	return (0);
+}
+
+int			get_next_line(int const fd, char **line)
+{
+	int			ret;
+	static char	buff[BUFF_SIZE + 1];
+
+	ret = ft_init_line(line);
+	if (ret == -1)
+		return (-1);
+	if (ft_strlen(buff))
+	{
+		ret = ft_cp_buff(line, buff);
+		if (ret == -1)
+			return (-1);
+		if (ft_check_line(buff))
+			return (1);
+	}
+	ret = ft_read_txt(fd, line, buff);
+	if (ret == -1)
+		return (-1);
+	else if (ret == 0)
+		return (0);
+	else
+		return (1);
 }
