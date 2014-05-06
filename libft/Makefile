@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 12:15:41 by npineau           #+#    #+#              #
-#    Updated: 2014/03/25 18:59:45 by npineau          ###   ########.fr        #
+#    Updated: 2014/05/06 13:21:51 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,7 +113,7 @@ AR_EXEC		=	$(AR) $(AR_FLAG) $@ $^
 
 ### COMPILATION ###
 
-CC			:=	gcc
+CC			:=	llvm-gcc
 C_FLAG		:=	-Wall -Wextra -Werror
 O_FLAG		:=	-O3
 C_OPT		=	-o $@ -c $< -I $(DIRINC)

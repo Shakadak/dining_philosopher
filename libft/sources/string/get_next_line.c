@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/06 16:16:06 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/06 13:14:53 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/06 13:22:12 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,29 +46,6 @@
 ** it "move" the start of the buffer after the \n, otherwise, it clear
 ** enirely the buffer.
 */
-
-static int	ft_read_txt(int fd, char **line, char *buff)
-{
-	int	res;
-	int	ret;
-
-	while ((res = read(fd, buff, BUFF_SIZE)) > 0)
-	{
-		buff[res] = '\0';
-		ret = ft_cp_buff(line, buff);
-		if (ret == -1)
-			return (-1);
-		if (ft_check_line(buff))
-			return (1);
-	}
-	if (res == 0)
-	{
-		if (ft_strlen(*line))
-			return (1);
-		return (0);
-	}
-	return (-1);
-}
 
 static int	ft_cp_buff(char **line, char *buff)
 {
@@ -112,6 +89,29 @@ static int	ft_check_line(char *buff)
 	}
 	ft_strclr(buff);
 	return (0);
+}
+
+static int	ft_read_txt(int fd, char **line, char *buff)
+{
+	int	res;
+	int	ret;
+
+	while ((res = read(fd, buff, BUFF_SIZE)) > 0)
+	{
+		buff[res] = '\0';
+		ret = ft_cp_buff(line, buff);
+		if (ret == -1)
+			return (-1);
+		if (ft_check_line(buff))
+			return (1);
+	}
+	if (res == 0)
+	{
+		if (ft_strlen(*line))
+			return (1);
+		return (0);
+	}
+	return (-1);
 }
 
 int			get_next_line(int const fd, char **line)
