@@ -6,13 +6,29 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 11:43:05 by npineau           #+#    #+#             */
-/*   Updated: 2014/02/05 11:59:50 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/06 12:59:54 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-static char	*ft_initiate(int n);
+static char	*ft_initiate(int n)
+{
+	char	*new;
+
+	if (n < 0)
+	{
+		new = ft_strnew(3);
+		new[0] = '-';
+		new[1] = -n + '0';
+	}
+	else
+	{
+		new = ft_strnew(2);
+		new[0] = n + '0';
+	}
+	return (new);
+}
 
 char		*ft_itoa(int n)
 {
@@ -39,22 +55,4 @@ char		*ft_itoa(int n)
 		ft_strdel(&tmp);
 		return (new);
 	}
-}
-
-static char	*ft_initiate(int n)
-{
-	char	*new;
-
-	if (n < 0)
-	{
-		new = ft_strnew(3);
-		new[0] = '-';
-		new[1] = -n + '0';
-	}
-	else
-	{
-		new = ft_strnew(2);
-		new[0] = n + '0';
-	}
-	return (new);
 }
