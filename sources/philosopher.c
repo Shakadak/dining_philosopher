@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   philosopher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/05/05 18:29:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/06 15:11:56 by npineau          ###   ########.fr       */
+/*   Created: 2014/05/06 15:01:23 by npineau           #+#    #+#             */
+/*   Updated: 2014/05/06 15:19:09 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#include <unistd.h>
+#include "libft.h"
 
-# define MAX_PHILO 7
-# define MAX_LIFE 7
-# define EAT_T 6
-# define REST_T 3
-# define THINK_T 4
-# define TIMEOUT 60
-
-void	*philosopher(void *id);
-
-#endif
+void	*philosopher(void *id)
+{
+	usleep((int)id * 100);
+	ft_putstr("Philosopher #");
+	ft_putnbr((int)id);
+	ft_putendl(" successfully sat down.");
+	return (NULL);
+}
