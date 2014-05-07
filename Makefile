@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/08 10:39:32 by npineau           #+#    #+#              #
-#    Updated: 2014/05/06 15:06:49 by npineau          ###   ########.fr        #
+#    Updated: 2014/05/07 18:36:47 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ DIRLIB	:=	libft
 ### FILES ###
 
 SRC		:=	main.c \
-			philosopher.c
+			philosopher.c \
+			eat.c \
+			init_table.c
 OBJ		:=	$(SRC:.c=.o)
 
 HEAD	:=	philo.h
