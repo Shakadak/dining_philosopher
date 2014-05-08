@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/08 10:39:32 by npineau           #+#    #+#              #
-#    Updated: 2014/05/08 15:48:07 by npineau          ###   ########.fr        #
+#    Updated: 2014/05/08 17:59:51 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC		:=	main.c \
 			eat.c \
 			rest.c \
 			think.c \
+			master.c \
 			init_table.c
 OBJ		:=	$(SRC:.c=.o)
 
