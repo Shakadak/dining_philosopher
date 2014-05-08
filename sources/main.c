@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 14:44:21 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/07 18:45:34 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/08 13:03:54 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int	main(void)
 {
 	long		i;
 	pthread_t	philos[MAX_PHILO];
+	t_philo		*list;
 
 	i = 0;
-	philosopher((void *)-1);
+	list = (t_philo *)philosopher((void *)-1);
 	while (i < MAX_PHILO)
 	{
 		pthread_create(&philos[i], NULL, philosopher, (void *)i);
@@ -27,6 +28,5 @@ int	main(void)
 	}
 	while (i-- > 0)
 		pthread_join(philos[i], NULL);
-	eat(-1);
 	return (0);
 }

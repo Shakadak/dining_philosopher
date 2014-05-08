@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/05 18:29:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/07 18:39:03 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/08 13:24:57 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@
 
 typedef struct		s_philo
 {
+	int				health;
 	int				id;
-	pthread_mutex_t	*chopstick;
+	pthread_mutex_t	chopstick;
 	int				sat;
 }					t_philo;
 
 void				*philosopher(void *arg);
-void				eat(int id);
+void				eat(int id, t_philo *list);
 t_philo				*init_table(void);
 
 #endif
