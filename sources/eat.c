@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/07 13:38:18 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/08 13:37:36 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/08 15:33:45 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	eat(int	id, t_philo *list)
 	printf("Philosopher %d took chopstick #%d\n", id, (id + id % 2) % MAX_PHILO);
 	pthread_mutex_lock(&list[(id + (id + 1) % 2) % MAX_PHILO].chopstick);
 	printf("Philosopher %d took chopstick #%d\n", id, (id + (id + 1) % 2) % MAX_PHILO);
+	list[id].eating = 1;
 	usleep(EAT_T * 1000000);
 	pthread_mutex_unlock(&list[(id + id % 2) % MAX_PHILO].chopstick);
 	pthread_mutex_unlock(&list[(id + (id + 1) % 2) % MAX_PHILO].chopstick);

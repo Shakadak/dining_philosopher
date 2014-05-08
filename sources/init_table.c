@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/07 18:20:29 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/08 13:37:21 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/08 15:50:53 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_philo	*init_table(void)
 		new[i].id = i;
 		new[i].health = MAX_LIFE;
 		new[i].sat = 0;
+		new[i].eating = 0;
 		if (pthread_mutex_init(&new[i].chopstick, NULL))
 			ft_putendl("failed mutex");
 		i++;

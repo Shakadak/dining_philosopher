@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   rest.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/05/05 18:29:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/08 15:30:08 by npineau          ###   ########.fr       */
+/*   Created: 2014/05/08 14:54:39 by npineau           #+#    #+#             */
+/*   Updated: 2014/05/08 15:49:25 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#include <unistd.h>
+#include "philo.h"
 
-# include <pthread.h>
-
-# define MAX_PHILO 7
-# define MAX_LIFE 7
-# define EAT_T 6
-# define REST_T 3
-# define THINK_T 4
-# define TIMEOUT 60
-
-typedef struct		s_philo
+void	rest(int id, t_philo *list)
 {
-	int				health;
-	int				id;
-	pthread_mutex_t	chopstick;
-	int				sat;
-	int				eating;
-}					t_philo;
-
-void				*philosopher(void *arg);
-void				eat(int id, t_philo *list);
-t_philo				*init_table(void);
-
-#endif
+	list[id].eating = 0;
+	usleep(1000000 * REST_T);
+}
