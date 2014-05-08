@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eat.c                                              :+:      :+:    :+:   */
+/*   master.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/05/07 13:38:18 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/08 17:21:56 by npineau          ###   ########.fr       */
+/*   Created: 2014/05/08 17:16:47 by npineau           #+#    #+#             */
+/*   Updated: 2014/05/08 18:00:24 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
 #include "philo.h"
 
-void	eat(int	id, t_philo *list, int reserved)
+void	*master(void *arg)
 {
-	if (!reserved)
+	t_philo	*list;
+	long	id;
+	int		time;
+
+	list = (t_philo *)arg;
+	time = TIMEOUT;
+	while (time--)
 	{
-		pthread_mutex_lock(&list[(id + id % 2) % MAX_PHILO].chopstick);
-		pthread_mutex_lock(&list[(id + (id + 1) % 2) % MAX_PHILO].chopstick);
+		usleep(1000000);
+		id = 0;
+		while (id < MAX_PHILO)
+		{
+			if (--list[id].health <= 0)
+				return ((void *)id);
+		}
 	}
-	list[id].eating = 1;
-	usleep(EAT_T * 1000000);
-	list[id].health = MAX_LIFE;
-	pthread_mutex_unlock(&list[(id + id % 2) % MAX_PHILO].chopstick);
-	pthread_mutex_unlock(&list[(id + (id + 1) % 2) % MAX_PHILO].chopstick);
+	return (NULL);
 }

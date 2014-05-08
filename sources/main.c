@@ -6,17 +6,18 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 14:44:21 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/08 13:03:54 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/08 18:01:37 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pthread.h>
+#include "libft.h"
 #include "philo.h"
 
 int	main(void)
 {
 	long		i;
-	pthread_t	philos[MAX_PHILO];
+	pthread_t	philos[MAX_PHILO + 1];
 	t_philo		*list;
 
 	i = 0;
@@ -26,7 +27,10 @@ int	main(void)
 		pthread_create(&philos[i], NULL, philosopher, (void *)i);
 		i++;
 	}
-	while (i-- > 0)
-		pthread_join(philos[i], NULL);
+	pthread_create(&philos[i], NULL, master, (void *)list);
+	pthread_join(philos[i], (void *)&i);
+	ft_putstr("\nPhilosopher #");
+	ft_putnbr(i);
+	ft_putendl(" just died.\n");
 	return (0);
 }
