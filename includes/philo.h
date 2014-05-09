@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/05 18:29:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/09 16:52:01 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2014/05/09 18:32:27 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@
 # define REST 0x0000FF
 # define REST_IN_PEACE 0x9932CD
 # define WOOD 0x663300
+
+# define W_TABLE 800
+# define H_TABLE 420
 
 # define MAX_PHILO 7
 # define MAX_LIFE 24
@@ -54,5 +57,7 @@ void				eat(int id, t_philo *list, int reserved);
 void				rest(int id, t_philo *list);
 void				think(int id, t_philo *list, int stick_id);
 t_philo				*init_table(void);
+
+void				draw(t_env *env);
 
 #endif

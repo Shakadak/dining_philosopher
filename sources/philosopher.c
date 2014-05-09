@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 15:01:23 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/08 17:15:42 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/09 18:31:22 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,8 @@
 #include "libft.h"
 #include "philo.h"
 
-void	*philosopher(void *arg)
+static void	loop(t_philo *philo, int id)
 {
-	int				id;
-	static t_philo	*philo;
-
-	id = (int)arg;
-	if (id == -1)
-	{
-		philo = init_table();
-		return ((void *)philo);
-	}
-	philo[id].sat = 1;
 	while (philo[id].health > 0)
 	{
 		eat(id, philo, 0);
@@ -45,5 +35,20 @@ void	*philosopher(void *arg)
 				think(id, philo, id);
 		}
 	}
+}
+
+void		*philosopher(void *arg)
+{
+	int				id;
+	static t_philo	*philo;
+
+	id = (int)arg;
+	if (id == -1)
+	{
+		if (philo == NULL)
+			philo = init_table();
+		return ((void *)philo);
+	}
+	loop(philo, id);
 	return (NULL);
 }
