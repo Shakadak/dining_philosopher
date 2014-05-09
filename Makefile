@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/08 10:39:32 by npineau           #+#    #+#              #
-#    Updated: 2014/05/09 14:26:32 by npineau          ###   ########.fr        #
+#    Updated: 2014/05/09 16:37:54 by mde-jesu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ DIRLIB	:=	libft
 ### FILES ###
 
 SRC		:=	main.c \
+			draw.c \
 			philosopher.c \
 			eat.c \
 			rest.c \

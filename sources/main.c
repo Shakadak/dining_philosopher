@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 14:44:21 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/09 16:19:27 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2014/05/09 16:37:16 by mde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void)
 
 int		expose_hook(t_env *env)
 {
-	draw(env);
+	draw_table(env);
 	return (0);
 }
 
