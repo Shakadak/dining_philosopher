@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/08 10:39:32 by npineau           #+#    #+#              #
-#    Updated: 2014/05/08 17:59:51 by npineau          ###   ########.fr        #
+#    Updated: 2014/05/09 14:26:32 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ PLIB	:=	$(DIRLIB)/$(LIB)
 CC		:=	llvm-gcc
 C_FLAG	:=	-Wall -Wextra -Werror
 O_FLAG	:=	-O3
-L_FLAG	:=	-L $(DIRLIB) -lft
+L_FLAG	:=	-L $(DIRLIB) -lft -lpthread
 C_INC	:=	-I $(DIRINC) -I $(DIRLIB)/$(DIRINC)
 
 COMPIL	=	$(CC) -o $@ -c $< $(C_INC) $(C_FLAG) $(O_FLAG)
