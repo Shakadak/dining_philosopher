@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/05 18:29:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/09 16:16:46 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2014/05/09 16:52:01 by mde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@
 
 # define EAT 0x00FF00
 # define THINK 0xFFFFFF
-# define RESTE_IN_PEACE 0x9932CD
+# define REST 0x0000FF
+# define REST_IN_PEACE 0x9932CD
+# define WOOD 0x663300
 
 # define MAX_PHILO 7
 # define MAX_LIFE 24

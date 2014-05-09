@@ -6,7 +6,7 @@
 /*   By: mde-jesu <mde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/09 16:26:02 by mde-jesu          #+#    #+#             */
-/*   Updated: 2014/05/09 16:37:08 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2014/05/09 16:53:13 by mde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,22 @@ void	draw_table(t_env *env)
 	int		i;
 	int		j;
 
-	i = 0;
-	j = 0;
-	while ()
+	j = -1;
+	while (++j < 420)
 	{
-
+		i = 0;
+		while (i < 840)
+			mlx_pixel_put(env->mlx, env->win, j + 290, i++, WOOD);
 	}
 }
+
+/*
+**	**	**
+**	**	**
+
+tttttttttt	**
+tttttttttt	**
+
+**	**	**
+**	**	**
+*/
