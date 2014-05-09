@@ -6,11 +6,12 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 14:44:21 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/09 16:37:16 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2014/05/09 16:39:25 by mde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pthread.h>
+#include <stdlib.h>
 #include "libft.h"
 #include "philo.h"
 
