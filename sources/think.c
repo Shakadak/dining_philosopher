@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/08 15:18:07 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/10 13:42:16 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2014/05/10 15:57:53 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	think(int id, t_philo *list, int stick_id)
 {
 	pthread_mutex_unlock(&list[stick_id].chopstick);
 	list[id].eating = -1;
-	ft_putstr("\nPhilosopher #");
-	ft_putnbr(id);
-	ft_putendl(" is thinking.\n\t\tlol\n");
-	usleep(1000000 * THINK_T);
+	usleep(SECOND * THINK_T);
+	list[id].eating = 0;
 }

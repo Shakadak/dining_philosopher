@@ -6,7 +6,7 @@
 /*   By: mde-jesu <mde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/09 16:26:02 by mde-jesu          #+#    #+#             */
-/*   Updated: 2014/05/10 13:51:54 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2014/05/10 15:27:12 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	draw_table(t_env *env)
 	}
 }
 
-void	draw(t_env *env)
+void		draw(t_env *env)
 {
 	t_philo	*list;
 
@@ -67,13 +67,3 @@ void	draw(t_env *env)
 	draw_philo(env, get_color(list[5]), 300, 720);
 	draw_philo(env, get_color(list[6]), 0, 720);
 }
-/*
-**	**	**
-**	**	**
-
-tttttttttt	**
-tttttttttt	**
-
-**	**	**
-**	**	**
-*/

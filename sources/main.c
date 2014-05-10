@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 14:44:21 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/10 13:21:16 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2014/05/10 16:06:56 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,7 @@ int		key_hook(int keycode)
 	return (0);
 }
 
-/*
-**		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
-*/
-
-int	main(void)
+int		main(void)
 {
 	long		i;
 	pthread_t	philos[MAX_PHILO + 1];
@@ -52,5 +48,6 @@ int	main(void)
 	mlx_expose_hook(env.win, expose_hook, &env);
 	mlx_loop(env.mlx);
 	pthread_join(philos[i], (void *)&i);
+	stop_philo(philos);
 	return (0);
 }
