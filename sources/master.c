@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/08 17:16:47 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/09 18:33:51 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/10 14:01:58 by mde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	*master(void *arg)
 			draw((t_env *)arg);
 		}
 	}
+	ft_putendl("Now, it is time... To DAAAAAAAANCE !!!");
 	return (NULL);
 }

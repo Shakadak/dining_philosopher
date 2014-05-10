@@ -6,7 +6,7 @@
 /*   By: mde-jesu <mde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/09 16:26:02 by mde-jesu          #+#    #+#             */
-/*   Updated: 2014/05/10 13:16:31 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/10 13:51:54 by mde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static void	draw_philo(t_env *env, int color, int x, int y)
 	int		j;
 
 	j = -1;
-	while (++j < 30)
+	while (++j < 80)
 	{
 		i = 0;
-		while (i < 30)
+		while (i < 80)
 			mlx_pixel_put(env->mlx, env->win, x + i++, j + y, color);
 	}
 }
@@ -59,10 +59,13 @@ void	draw(t_env *env)
 
 	list = philosopher((void *)-1);
 	draw_table(env);
-	draw_philo(env, get_color(list[0]), 0, 200);
-	draw_philo(env, get_color(list[1]), 90, 200);
-	draw_philo(env, get_color(list[2]), 175, 200);
-	draw_philo(env, get_color(list[3]), 450, 200);
+	draw_philo(env, get_color(list[0]), 0, 180);
+	draw_philo(env, get_color(list[1]), 300, 180);
+	draw_philo(env, get_color(list[2]), 600, 180);
+	draw_philo(env, get_color(list[3]), 820, 460);
+	draw_philo(env, get_color(list[4]), 600, 720);
+	draw_philo(env, get_color(list[5]), 300, 720);
+	draw_philo(env, get_color(list[6]), 0, 720);
 }
 /*
 **	**	**
