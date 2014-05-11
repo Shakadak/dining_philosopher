@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/05 18:29:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/11 17:07:24 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 17:08:35 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 # define REST_T 3
 # define THINK_T 1
 # define TIMEOUT 60
-# define SECOND 500000
+# define SECOND 1000000
 
 typedef struct		s_env
 {

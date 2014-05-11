@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/08 17:16:47 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/11 16:12:02 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 17:09:22 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		*master(void *arg)
 		{
 			list[id].health -= (time % 4 ? 0 : 1);
 			if (list[id].health <= 0)
-				return(stop(list, id, (t_env *)arg));
+				return (stop(list, id, (t_env *)arg));
 			id++;
 			draw((t_env *)arg);
 		}
