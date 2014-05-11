@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/08 17:16:47 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/11 17:09:22 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:33:15 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void		*master(void *arg)
 
 	list = philosopher((void *)-1);
 	time = TIMEOUT * 4;
-	while (time-- >= 0)
+	while (time-- > 1)
 	{
 		usleep(SECOND / 4);
 		id = 0;
@@ -52,7 +52,7 @@ void		*master(void *arg)
 			draw((t_env *)arg);
 		}
 	}
-	stop(list, -1, (t_env *)arg);
 	ft_putendl("Now, it is time... To DAAAAAAAANCE !!!");
+	stop(list, -1, (t_env *)arg);
 	return ((void *)-1);
 }

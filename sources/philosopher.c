@@ -6,12 +6,10 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 15:01:23 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/11 16:25:46 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:34:57 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
 #include "philo.h"
 
 static void	loop(t_philo *philo, int id)

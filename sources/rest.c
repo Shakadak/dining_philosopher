@@ -6,12 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/08 14:54:39 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/11 16:14:26 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:40:08 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
 #include "philo.h"
 
 void	rest(int id, t_philo *list)

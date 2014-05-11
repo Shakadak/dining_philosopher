@@ -6,12 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/07 18:20:29 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/10 15:37:19 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:39:28 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <pthread.h>
 #include "libft.h"
 #include "philo.h"
 
@@ -29,7 +28,7 @@ t_philo	*init_table(void)
 		new[i].id = i;
 		new[i].health = MAX_LIFE;
 		new[i].sat = 1;
-		new[i].eating = 0;
+		new[i].eating = 2;
 		if (pthread_mutex_init(&new[i].chopstick, NULL))
 			ft_putendl("failed mutex");
 		i++;

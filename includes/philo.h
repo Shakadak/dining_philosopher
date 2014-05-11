@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/05 18:29:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/11 17:08:35 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:35:37 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <pthread.h>
 # include <mlx.h>
-# include <fcntl.h>
 
 # define X_WIN 1000
 # define Y_WIN 1000

@@ -6,12 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/07 13:38:18 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/11 16:14:10 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:39:03 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
 #include "philo.h"
 
 void	eat(int	id, t_philo *list, int reserved)

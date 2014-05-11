@@ -6,13 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 14:44:21 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/10 16:06:56 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:37:13 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <pthread.h>
 #include <stdlib.h>
-#include "libft.h"
 #include "philo.h"
 
 int		expose_hook(t_env *env)

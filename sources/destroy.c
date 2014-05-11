@@ -6,15 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/10 14:18:58 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/10 16:10:49 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:38:39 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <pthread.h>
-#include <stdlib.h>
 #include "philo.h"
-#include "libft.h"
-#include <stdio.h>
 
 static void	destroy(t_philo *list)
 {

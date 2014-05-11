@@ -6,11 +6,10 @@
 /*   By: mde-jesu <mde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/09 16:26:02 by mde-jesu          #+#    #+#             */
-/*   Updated: 2014/05/11 16:13:45 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 19:36:47 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
 #include "philo.h"
 
 static int	get_color(t_philo philo)
@@ -41,26 +40,12 @@ static void	draw_philo(t_env *env, int color, int x, int y)
 	}
 }
 
-static void	draw_table(t_env *env)
-{
-	int		i;
-	int		j;
-
-	j = -1;
-	while (++j < 420)
-	{
-		i = 0;
-		while (i < 800)
-			mlx_pixel_put(env->mlx, env->win, i++, j + 280, WOOD);
-	}
-}
-
 void		draw(t_env *env)
 {
-	t_philo	*list;
+	static t_philo	*list;
 
-	list = philosopher((void *)-1);
-	draw_table(env);
+	if (list == NULL)
+		list = philosopher((void *)-1);
 	draw_philo(env, get_color(list[0]), 0, 180);
 	draw_philo(env, get_color(list[1]), 300, 180);
 	draw_philo(env, get_color(list[2]), 600, 180);
