@@ -6,7 +6,7 @@
 /*   By: mde-jesu <mde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/09 16:26:02 by mde-jesu          #+#    #+#             */
-/*   Updated: 2014/05/10 15:27:12 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 16:13:45 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ static int	get_color(t_philo philo)
 		return (EAT);
 	else if (philo.eating == -1)
 		return (THINK);
-	else
+	else if (philo.eating == 0)
 		return (REST);
+	else
+		return (0xFF0000);
 }
 
 static void	draw_philo(t_env *env, int color, int x, int y)

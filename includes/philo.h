@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/05 18:29:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/10 16:15:07 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 17:07:24 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@
 # define H_TABLE 420
 
 # define MAX_PHILO 7
-# define MAX_LIFE 24
-# define EAT_T 3
-# define REST_T 6
-# define THINK_T 4
+# define MAX_LIFE 15
+# define EAT_T 5
+# define REST_T 3
+# define THINK_T 1
 # define TIMEOUT 60
-# define SECOND 1000000
+# define SECOND 500000
 
 typedef struct		s_env
 {

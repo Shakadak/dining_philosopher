@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/08 17:16:47 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/10 16:14:57 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 16:12:02 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #include "philo.h"
 #include "libft.h"
 
-static void	stop(t_philo *list, int id)
+static void	*stop(t_philo *list, int id, t_env *env)
 {
 	int		i;
 
+	draw(env);
 	if (id >= 0)
 	{
 		ft_putstr("Philosopher #");
@@ -27,6 +28,7 @@ static void	stop(t_philo *list, int id)
 	i = 0;
 	while (i < 7)
 		list[i++].sat = 0;
+	return (NULL);
 }
 
 void		*master(void *arg)
@@ -36,24 +38,21 @@ void		*master(void *arg)
 	int		time;
 
 	list = philosopher((void *)-1);
-	time = TIMEOUT;
+	time = TIMEOUT * 4;
 	while (time-- >= 0)
 	{
-		usleep(SECOND);
+		usleep(SECOND / 4);
 		id = 0;
 		while (id < MAX_PHILO)
 		{
-			if (--(list[id].health) <= 0)
-			{
-				draw((t_env *)arg);
-				stop(list, id);
-				return ((void *)id);
-			}
+			list[id].health -= (time % 4 ? 0 : 1);
+			if (list[id].health <= 0)
+				return(stop(list, id, (t_env *)arg));
 			id++;
 			draw((t_env *)arg);
 		}
 	}
-	stop(list, -1);
+	stop(list, -1, (t_env *)arg);
 	ft_putendl("Now, it is time... To DAAAAAAAANCE !!!");
 	return ((void *)-1);
 }

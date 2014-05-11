@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/07 13:38:18 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/10 15:58:15 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/11 16:14:10 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	eat(int	id, t_philo *list, int reserved)
 	list[id].eating = 1;
 	usleep(EAT_T * SECOND);
 	list[id].health = MAX_LIFE;
-	list[id].eating = 0;
+	list[id].eating = 2;
 	pthread_mutex_unlock(&list[(id + id % 2) % MAX_PHILO].chopstick);
 	pthread_mutex_unlock(&list[(id + (id + 1) % 2) % MAX_PHILO].chopstick);
 }
